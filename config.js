@@ -33,10 +33,9 @@ module.exports = {
   // 🔥 STATUS WATCH & REACT CONFIGS (NEW)
   // ===========================================
   AUTO_STATUS_WATCH: process.env.AUTO_STATUS_WATCH || "true", // Enable/Disable auto status watch
-  STATUS_REACT: process.env.STATUS_REACT || "❤️","🧡","💛","💚","💙","💜","🤎","🖤","🤍","💫","👀","🙂","🌺","🥀","🌸","💐","🧊","🌚","👑","💎","🎊","🚨","⏳️", // Emoji/Reaction for status
-  STATUS_REACT_USERS: process.env.STATUS_REACT_USERS 
-    ? process.env.STATUS_REACT_USERS.split(",") 
-    : ["all"], // List of numbers to auto-react (comma separated in env)
+  STATUS_REACT: process.env.STATUS_REACT ? process.env.STATUS_REACT.split(',') : ["❤️", "🧡", "💛", "💚", "💙", "💜", "🤎", "🖤", "🤍", "💫", "👀", "🙂", "🌺", "🥀", "🌸", "💐", "🧊", "🌚", "👑", "💎", "🎊", "🚨", "⏳️"], // Emoji/Reaction for status
+  STATUS_REACT_USERS: process.env.STATUS_REACT_USERS ? process.env.STATUS_REACT_USERS.split(",") : ["all"], // List of numbers to auto-react (comma separated in env)
   // ===========================================
 
 };
+
