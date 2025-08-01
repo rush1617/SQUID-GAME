@@ -1,12 +1,12 @@
 {
-  "name": "RUSH-TD",
+  "name": "SQUID-GAME",
   "version": "1.0.0",
   "description": "A Powerfull Whatsapp Bot",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name RUSH-TD",
-    "stop": "pm2 stop RUSH-TD",
-    "restart": "pm2 restart RUSH-TD"
+    "start": "pm2 start index.js --deep-monitoring --attach --name SQUID-GAME",
+    "stop": "pm2 stop SQUID-GAME",
+    "restart": "pm2 restart SQUID-GAME"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "^6.7.18",
@@ -34,7 +34,6 @@
     "vm": "^0.1.0",
     "@xaviabot/fb-downloader": "^1.0.14",
     "yt-search": "^2.13.1",
-    "@vreden/youtube_scraper": "^1.2.7",
-    "dotenv": "^16.4.0"
+    "@vreden/youtube_scraper": "^1.2.7"
   }
 }
