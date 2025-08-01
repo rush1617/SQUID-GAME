@@ -89,7 +89,7 @@ async function connectToWA() {
 
       const up = `
 ╭─────── ○ △ □  ─────────╮
-│         🟦🟥 SYSTEM ONLINE 🟦🟥        │
+│         🟥 SYSTEM ONLINE 🟦       │
 ╰──────────────⟡───────╯
 │ 👋 *Hi* there, I'm Alive Now!
 │ 🍁 *PREFIX:* "."
