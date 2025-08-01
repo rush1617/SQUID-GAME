@@ -27,7 +27,6 @@ module.exports = {
 *DISSANAYAKA* 💰`, // Change alive msg from here
   BOT_OWNER: "94726892483", // Replace your bot owner number here with 94(country code)
   ownerNumber: ["94726892483"], // Replace your bot owner number here (same as bot owner number)
-  AUTO_READ_STATUS: process.env.AUTO_READ_STATUS || "true",
   MODE: process.env.MODE || "public",// public,private,groups,inbox
 
   // ===========================================
