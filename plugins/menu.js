@@ -10,7 +10,7 @@ cmd(
     try {
       const menuText = `
 ╭━━ ⚡ *SQUID-GAME*⚡ ━━╮
-┃  💠 *Ｍ Ａ Ｉ Ｎ - Ｍ Ｅ Ｎ Ｕ*
+┃  💠 *Ｍ Ａ Ｉ Ｎ - Ｍ Ｅ Ｎ Ｕ* 💠
 ┃        ────୨ৎ────
 ╰➤ 📥 *DOWNLOAD* — Type: .download
 ╰➤ 🎨 *LOGO* — Type: .logo
