@@ -88,8 +88,8 @@ async function connectToWA() {
       console.log('✅ SQUID-GAME connected to WhatsApp');
 
       const up = `
-╭─────── ⭓ ⭓ ⭓  ─────────╮
-│         🧿 SYSTEM ONLINE 🧿        │
+╭─────── ○ △ □  ─────────╮
+│         🟦🟥 SYSTEM ONLINE 🟦🟥        │
 ╰──────────────⟡───────╯
 │ 👋 *Hi* there, I'm Alive Now!
 │ 🍁 *PREFIX:* "."
@@ -97,7 +97,7 @@ async function connectToWA() {
 │ 🔋 *PLATFORM:* linux
 │ 🧩 *VERSION:* 1.0.0
 ╰───────────────⬣
-*👑 O  W  N  E  R*
+*🎠 O  W  N  E  R*
 🔥 RAMESH DISSANAYAKA 🔥
        `;
       rush.sendMessage(ownerNumber[0] + "@s.whatsapp.net", {
