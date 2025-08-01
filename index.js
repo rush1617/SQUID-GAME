@@ -126,8 +126,9 @@ async function connectToWA() {
     if (!mek || !mek.message) return;
 
     mek.message = getContentType(mek.message) === 'ephemeralMessage' ? mek.message.ephemeralMessage.message : mek.message;
-    if (mek.key.remoteJid === 'status@broadcast') return;
-
+    if (mek.key.remoteJid === 'status@broadcast' && config.AUTO_READ_STATUS === "true"){
+    await conn.readMessage([mek.key]) 
+    }
     const m = sms(rush, mek);
     const type = getContentType(mek.message);
     const from = mek.key.remoteJid;
