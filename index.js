@@ -101,7 +101,7 @@ async function connectToWA() {
 🔥 RAMESH DISSANAYAKA 🔥
        `;
       rush.sendMessage(ownerNumber[0] + "@s.whatsapp.net", {
-        image: { url: 'https://raw.githubusercontent.com/rush1617/SQUID-GAME/refs/heads/main/images/SQUID-GAME_Alive.png' },
+        image: { url: 'https://github.com/rush1617/SQUID-GAME/blob/main/Images/Alive.png?raw=true' },
         caption: up
       });
 
