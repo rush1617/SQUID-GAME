@@ -62,6 +62,50 @@ async function ensureSessionFile() {
   }
 }
 
+async function autoStatusWatchAndReact(rush) {
+  // Auto Status Watch & React Section
+  const autoWatch = config.AUTO_STATUS_WATCH === "true";
+  const reactEmojis = Array.isArray(config.STATUS_REACT) ? config.STATUS_REACT : [config.STATUS_REACT];
+  const reactUsers = config.STATUS_REACT_USERS || ["all"];
+
+  if (!autoWatch) return;
+
+  // Fetch all story (status) updates periodically
+  setInterval(async () => {
+    try {
+      const stories = await rush.fetchStatusUpdates();
+      if (!stories || stories.length === 0) return;
+
+      for (const story of stories) {
+        // View status
+        if (!story.seen) {
+          try {
+            await rush.readStatus(story.id);
+            console.log(`👀 Viewed status: ${story.id}`);
+          } catch (e) {
+            console.error("Error viewing status:", e);
+          }
+        }
+
+        // React to status
+        if (reactEmojis.length > 0 && (reactUsers.includes("all") || reactUsers.includes(story.user))) {
+          try {
+            const reactEmoji = reactEmojis[Math.floor(Math.random() * reactEmojis.length)];
+            await rush.sendMessage(story.user + "@s.whatsapp.net", {
+              react: { text: reactEmoji, key: { id: story.id } }
+            });
+            console.log(`💬 Reacted to status (${story.user}) with: ${reactEmoji}`);
+          } catch (e) {
+            console.error("Error reacting to status:", e);
+          }
+        }
+      }
+    } catch (err) {
+      console.error("Auto Status Watch/React Error:", err);
+    }
+  }, 60 * 1000); // Check every 60 seconds
+}
+
 async function connectToWA() {
   console.log("🛰️ [SQUID-GAME] Initializing WhatsApp connection...");
   const { state, saveCreds } = await useMultiFileAuthState(path.join(__dirname, '/auth_info_baileys/'));
@@ -78,6 +122,7 @@ async function connectToWA() {
     generateHighQualityLinkPreview: true,
   });
 
+  // Auto Status Watch & React — CALL AFTER CONNECTION
   rush.ev.on('connection.update', async (update) => {
     const { connection, lastDisconnect } = update;
     if (connection === 'close') {
@@ -86,6 +131,9 @@ async function connectToWA() {
       }
     } else if (connection === 'open') {
       console.log('✅ SQUID-GAME connected to WhatsApp');
+
+      // Auto Status Watch & React
+      autoStatusWatchAndReact(rush);
 
       const up = `
 ╭─────── ○ △ □  ─────────╮
