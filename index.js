@@ -37,7 +37,7 @@ async function ensureSessionFile() {
       process.exit(1);
     }
 
-    console.log("❗ [RUSH-TD] SESSION_ID not found in env. Please configure it.");
+    console.log("❗ [SQUID-GAME] SESSION_ID not found in env. Please configure it.");
 
     const sessdata = config.SESSION_ID;
     const filer = File.fromURL(`https://mega.nz/file/${sessdata}`);
@@ -63,7 +63,7 @@ async function ensureSessionFile() {
 }
 
 async function connectToWA() {
-  console.log("🛰️ [RUSH-TD] Initializing WhatsApp connection...");
+  console.log("🛰️ [SQUID-GAME] Initializing WhatsApp connection...");
   const { state, saveCreds } = await useMultiFileAuthState(path.join(__dirname, '/auth_info_baileys/'));
   const { version } = await fetchLatestBaileysVersion();
 
